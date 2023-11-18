@@ -1,12 +1,11 @@
 # test_app.py
 
 import pytest
-from app import app
+from app import hello_world
 
 @pytest.fixture
 def app():
-    app = app()
-    return app
+    return hello_world()
 
 @pytest.fixture
 def client(app):
