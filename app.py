@@ -1,6 +1,6 @@
 # app.py
 
-from flask import Flask
+from flask import Flask 
 from urllib.parse import quote
 
 def create_app():
