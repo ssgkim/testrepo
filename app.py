@@ -1,7 +1,7 @@
 # app.py
 
 from flask import Flask 
-from urllib.parse import quote
+from urllib.parse import quote 
 
 def create_app():
     app = Flask(__name__)
