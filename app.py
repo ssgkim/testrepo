@@ -1,10 +1,13 @@
+# app.py
+
 from flask import Flask
+from urllib.parse import quote
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World! This is a simple Flask app 12333.'
+    @app.route('/')
+    def home():
+        return quote('Hello, World! This is a simple Flask app 12333.')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    return app
