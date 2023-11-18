@@ -11,3 +11,7 @@ def create_app():
         return quote('Hello, World! This is a simple Flask app 12333.')
 
     return app
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(host='0.0.0.0', port=80, debug=True)
