@@ -1,18 +1,20 @@
-import unittest
+# test_app.py
+
+import pytest
 from app import app
 
-class TestApp(unittest.TestCase):
-    def setUp(self):
-        # Create a test client
-        self.app = app.test_client()
+@pytest.fixture
+def app():
+    app = create_app()
+    return app
 
-    def test_hello_world(self):
-        # Send a GET request to the '/' route
-        response = self.app.get('/')
-        # Check if the response status code is 200 (OK)
-        self.assertEqual(response.status_code, 200)
-        # Check if the response data contains the expected message
-        self.assertIn(b'Hello, World!', response.data)
+@pytest.fixture
+def client(app):
+    return app.test_client()
 
-if __name__ == '__main__':
-    unittest.main()
+def test_home(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b'Hello, World!' in response.data
+
+# Add more test functions as needed
