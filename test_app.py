@@ -5,7 +5,7 @@ from app import app
 
 @pytest.fixture
 def app():
-    app = create_app()
+    app = app()
     return app
 
 @pytest.fixture
