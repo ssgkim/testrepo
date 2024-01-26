@@ -30,8 +30,7 @@ pull_request_rules:
             
   - name: Merge on approval and successful workflow
     conditions:
-      #- "#approved-reviews-by>=1"
-      - "check-success=Rule: Dispatch GitHub Actions (github_actions)"
+      - "#approved-reviews-by>=1"
     actions:
       merge:
         method: merge
