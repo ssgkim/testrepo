@@ -1,4 +1,4 @@
-# pull_request_rules:
+pull_request_rules:
 #   - name: Assign reviewer
 #     conditions:
 #       - "#files>=1"
