@@ -1,14 +1,10 @@
 name: Labeling PR
-
 on:
-  pull_request:
-    branches: [ "master" ]
+  push:
+    branches:
+      - master
 jobs:
   label_issue:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          gh issue edit $ISSUE_URL --add-label "GFG"
+      - uses: dessant/label-actions@v4
