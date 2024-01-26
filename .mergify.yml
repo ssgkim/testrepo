@@ -2,7 +2,15 @@ pull_request_rules:
   - name: Automatic merge
     conditions:
       - "#approved-reviews-by>=1"
+      - check-success = mergebot.yml
     actions:
+        assign:
+            add_users:
+                - "sudhanshuvlog"
+        comment:
+            message: "Sudhanshu is been added as the reviewer"
         merge:
             method: merge
+        comment: 
+            message: "merged yeeeee"
       
