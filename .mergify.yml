@@ -30,8 +30,8 @@ pull_request_rules:
             
   - name: Merge on approval and successful workflow
     conditions:
-      # - "#approved-reviews-by>=1"
-        - "#approved-reviews-by>=0"
+       - "#approved-reviews-by>=1"
+        # - "#approved-reviews-by>=0"
     actions:
       merge:
         method: merge
