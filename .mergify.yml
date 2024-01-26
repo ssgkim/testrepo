@@ -1,18 +1,24 @@
-pull_request_rules:
-  - name: Assign reviewer
-    conditions:
-      - "#files>=1"
-    actions:
-      request_reviews:
-        users:
-            - "sudhanshuvlog"
-      comment:
-        message: "Requesting review from Sudhanshu"
+# pull_request_rules:
+#   - name: Assign reviewer
+#     conditions:
+#       - "#files>=1"
+#     actions:
+#       request_reviews:
+#         users:
+#             - "sudhanshuvlog"
+#       comment:
+#         message: "Requesting review from Sudhanshu"
         
       # github_actions:
       #   workflow:
       #     dispatch:
       #       - workflow: python-package.yml
+  - name: Conflict
+    conditions:
+      - conflicts
+    actions:
+      comment:
+        message: "This Pull Request has conflicts, could you fix it @{{author}}?"
             
   - name: Merge on approval and successful workflow
     conditions:
