@@ -17,6 +17,7 @@ pull_request_rules:
   - name: Merge on approval and successful workflow
     conditions:
       - "#approved-reviews-by>=1"
+      - "check-success=python-package.yml"
     actions:
       merge:
         method: merge
