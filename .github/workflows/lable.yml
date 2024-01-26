@@ -15,7 +15,7 @@ jobs:
         run: gh issue comment "22" --body "$BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
+          GH_REPO: "testrepo"
           NUMBER: ${{ github.event.issue.number }}
           BODY: >
             This issue is available for anyone to work on.
