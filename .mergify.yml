@@ -3,11 +3,11 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=0"
     actions:
-      assign:
-        add_users:
-          - "sudhanshuvlog"
-      comment:
-        message: "Sudhanshu is been added as the reviewer"
+      review:
+        approve:
+          reviewers:
+            - "sudhanshuvlog"
+        message: "Requesting review from Sudhanshu"
 
   - name: Merge on approval and successful workflow
     conditions:
