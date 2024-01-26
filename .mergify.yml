@@ -9,10 +9,10 @@ pull_request_rules:
       comment:
         message: "Requesting review from Sudhanshu"
         
-      github_actions:
-        workflow:
-          dispatch:
-            - workflow: python-package.yml
+      # github_actions:
+      #   workflow:
+      #     dispatch:
+      #       - workflow: python-package.yml
             
   - name: Merge on approval and successful workflow
     conditions:
