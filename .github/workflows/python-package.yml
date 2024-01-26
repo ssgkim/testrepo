@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
   # push:
   #   branches: [ "master" ]
-  pull_request:
-    branches: [ "master123" ]
+  # pull_request:
+  #   branches: [ "master123" ]
 
 jobs:
   build:
