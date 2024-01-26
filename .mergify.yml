@@ -1,20 +1,20 @@
 pull_request_rules:
-  - name: Automatic merge
+  - name: Assign reviewer
+    conditions:
+      - "#created-by>=1"
     actions:
-        assign:
-            add_users:
-                - "sudhanshuvlog"
-        comment:
-            message: "Sudhanshu is been added as the reviewer"
+      assign:
+        add_users:
+          - "sudhanshuvlog"
+      comment:
+        message: "Sudhanshu is been added as the reviewer"
 
-pull_request_rules:
-  - name: Automatic merge
+  - name: Merge on approval and successful workflow
     conditions:
       - "#approved-reviews-by>=1"
-      - check-success = mergebot.yml
+      - "check-success=main.yml"
     actions:
-        merge:
-            method: merge
-        comment: 
-            message: "merged yeeeee"
-      
+      merge:
+        method: merge
+      comment:
+        message: "Merged successfully after approval and successful workflow (mergebot.yml)"
