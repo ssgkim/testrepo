@@ -1,26 +1,12 @@
-name: Add comment
+name: "Pull Request Labeler"
 on:
-  push:
-    branches:
-      - master123
-  # issues:
-  #   types: [opened]
-  # pull_request_target:
-  #   types: [opened]
+- pull_request_target
+
 jobs:
-  add-comment:
-    # if: github.event.label.name == 'help wanted'
-    runs-on: ubuntu-latest
+  labeler:
     permissions:
-      issues: write
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
     steps:
-      - name: Add comment
-        run: gh issue comment "22" --body "$BODY"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: "testrepo"
-          NUMBER: ${{ github.event.issue.number }}
-          BODY: >
-            This issue is available for anyone to work on.
-            **Make sure to reference this issue in your pull request.**
-            :sparkles: Thank you for your contribution! :sparkles:
+    - uses: actions/labeler@v5
