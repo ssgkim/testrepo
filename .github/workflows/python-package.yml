@@ -63,4 +63,7 @@ jobs:
             push: true
             tags: jinny1/flaskapp:latest
         - 
-          run: curl http://3.6.92.113:8080/job/job1/build?token=mytoken
+          run: "curl -X POST http://13.233.128.197:8080/job/job1/build \
+                --user admin:113a281e7edc4ec69beb8a2e1e241ac405 \
+                --data-urlencode json='{"parameter": [{"name":"token", "value":"mytoken"}]}'"
+
