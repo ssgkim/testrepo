@@ -11,7 +11,7 @@ def create_app():
 
     @app.route('/')
     def home():
-        return 'NIRS!!'
+        return 'NIRS!! - test2'
 
     return app
 
